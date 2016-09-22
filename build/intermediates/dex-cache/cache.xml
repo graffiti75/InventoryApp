@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="c1727a849bd581eaa5fb00b368abc6cb296f523a">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_20a5b2c19b16cc38a0537ee25fefaeb74b6c25a4/classes.dex" />
+    </item>
+
+</items>

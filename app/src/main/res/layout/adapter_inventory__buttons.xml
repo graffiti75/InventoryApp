@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey_300"
+    android:orientation="vertical">
+
+    <!--=============== FIRST LINE ===============-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:weightSum="3">
+
+        <!-- Sale Product -->
+
+        <Button
+            android:id="@+id/id_adapter_inventory__sale_product_button"
+            style="@style/FirstLineButton"
+            android:drawableTop="@mipmap/ic_exposure_neg_1_black_48dp"
+            android:text="Sale Product" />
+
+        <!-- Order More -->
+
+        <Button
+            android:id="@+id/id_adapter_inventory__order_more_button"
+            style="@style/FirstLineButton"
+            android:layout_marginLeft="10dp"
+            android:drawableTop="@mipmap/ic_more_horiz_black_48dp"
+            android:text="Order More" />
+
+        <!-- Delete Product -->
+
+        <Button
+            android:id="@+id/id_adapter_inventory__delete_product_button"
+            style="@style/FirstLineButton"
+            android:layout_marginLeft="10dp"
+            android:drawableTop="@mipmap/ic_clear_black_48dp"
+            android:text="Delete Product" />
+    </LinearLayout>
+
+    <!--=============== SECOND LINE ===============-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+
+        <!-- Increase Quantity -->
+
+        <Button
+            android:id="@+id/id_adapter_inventory__increase_quantity_button"
+            style="@style/SecondLineButton"
+            android:drawableTop="@mipmap/ic_add_circle_black_48dp"
+            android:text="Increase Quantity" />
+
+        <!-- Decrease Quantity -->
+
+        <Button
+            android:id="@+id/id_adapter_inventory__decrease_quantity_button"
+            style="@style/SecondLineButton"
+            android:layout_marginLeft="10dp"
+            android:drawableTop="@mipmap/ic_remove_circle_black_48dp"
+            android:text="Decrease Quantity" />
+    </LinearLayout>
+</LinearLayout>
