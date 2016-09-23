@@ -2,13 +2,98 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/grey_500"
-    android:orientation="vertical"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingTop="10dp">
+    android:orientation="vertical">
 
-    <include layout="@layout/adapter_inventory__header" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_400"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
 
-    <include layout="@layout/adapter_inventory__buttons" />
+        <!--=============== SALE UNIT OF PRODUCT ===============-->
+
+        <ImageView
+            android:id="@+id/id_adapter_inventory__sale_product_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:contentDescription="Sale Product"
+            android:src="@mipmap/ic_remove_circle_black_48dp" />
+
+        <LinearLayout
+            android:id="@+id/id_adapter_inventory__linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_400"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <!--=============== IMAGE ===============-->
+
+            <ImageView
+                android:id="@+id/id_adapter_inventory__image_view"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:background="@color/grey_700"
+                android:scaleType="fitXY" />
+
+            <!--=============== HEADER ===============-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <!-- Name -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TitleTextView"
+                        android:text="Name:" />
+
+                    <TextView
+                        android:id="@+id/id_adapter_inventory__name_text_view"
+                        style="@style/FieldTextView"
+                        android:text="Pear" />
+                </LinearLayout>
+
+                <!-- Quantity Available -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TitleTextView"
+                        android:text="Quantity Available:" />
+
+                    <TextView
+                        android:id="@+id/id_adapter_inventory__quantity_text_view"
+                        style="@style/FieldTextView"
+                        android:text="35" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--=============== SEPARATOR ===============-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/white" />
 </LinearLayout>

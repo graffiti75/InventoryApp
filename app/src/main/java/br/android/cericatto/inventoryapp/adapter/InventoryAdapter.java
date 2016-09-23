@@ -5,17 +5,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
 import java.util.List;
 
 import br.android.cericatto.inventoryapp.R;
+import br.android.cericatto.inventoryapp.activity.DetailsActivity;
 import br.android.cericatto.inventoryapp.model.Inventory;
+import br.android.cericatto.inventoryapp.utils.ActivityUtils;
+import br.android.cericatto.inventoryapp.utils.Utils;
+import br.android.cericatto.inventoryapp.view.SaleProductDialog;
 
 /**
  * InventoryAdapter.java.
@@ -59,37 +62,19 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
 
         holder.nameTextView.setText(item.getProductName());
         holder.quantityTextView.setText(item.getQuantityAvailable().toString());
-        holder.priceTextView.setText(item.getPrice().toString());
-        holder.supplierTextView.setText("John's Farm");
 
         holder.saleProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mActivity, "Sale Product", Toast.LENGTH_SHORT).show();
+                SaleProductDialog dialog = new SaleProductDialog(mActivity);
+                Utils.callBackgroundDialog(mActivity, dialog);
             }
         });
-        holder.orderMoreButton.setOnClickListener(new View.OnClickListener() {
+
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mActivity, "Order More", Toast.LENGTH_SHORT).show();
-            }
-        });
-        holder.deleteProductButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(mActivity, "Delete Product", Toast.LENGTH_SHORT).show();
-            }
-        });
-        holder.increaseQuantityButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(mActivity, "Increase Quantity", Toast.LENGTH_SHORT).show();
-            }
-        });
-        holder.decreaseQuantityButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(mActivity, "Decrease Quantity", Toast.LENGTH_SHORT).show();
+                ActivityUtils.startActivity(mActivity, DetailsActivity.class);
             }
         });
     }
@@ -107,31 +92,19 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
     //--------------------------------------------------
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        public LinearLayout linearLayout;
         public ImageView productImageView;
         public TextView nameTextView;
         public TextView quantityTextView;
-        public TextView priceTextView;
-        public TextView supplierTextView;
-
-        public Button saleProductButton;
-        public Button orderMoreButton;
-        public Button deleteProductButton;
-        public Button increaseQuantityButton;
-        public Button decreaseQuantityButton;
+        public ImageView saleProductButton;
 
         public ViewHolder(View view) {
             super(view);
-            productImageView = (ImageView) view.findViewById(R.id.id_adapter_inventory__image_view);
-            nameTextView = (TextView) view.findViewById(R.id.id_adapter_inventory__name_text_view);
-            quantityTextView = (TextView) view.findViewById(R.id.id_adapter_inventory__quantity_text_view);
-            priceTextView = (TextView) view.findViewById(R.id.id_adapter_inventory__price_text_view);
-            supplierTextView = (TextView) view.findViewById(R.id.id_adapter_inventory__supplier_text_view);
-
-            saleProductButton = (Button) view.findViewById(R.id.id_adapter_inventory__sale_product_button);
-            orderMoreButton = (Button) view.findViewById(R.id.id_adapter_inventory__order_more_button);
-            deleteProductButton = (Button) view.findViewById(R.id.id_adapter_inventory__delete_product_button);
-            increaseQuantityButton = (Button) view.findViewById(R.id.id_adapter_inventory__increase_quantity_button);
-            decreaseQuantityButton = (Button) view.findViewById(R.id.id_adapter_inventory__decrease_quantity_button);
+            linearLayout = (LinearLayout)view.findViewById(R.id.id_adapter_inventory__linear_layout);
+            productImageView = (ImageView)view.findViewById(R.id.id_adapter_inventory__image_view);
+            nameTextView = (TextView)view.findViewById(R.id.id_adapter_inventory__name_text_view);
+            quantityTextView = (TextView)view.findViewById(R.id.id_adapter_inventory__quantity_text_view);
+            saleProductButton = (ImageView)view.findViewById(R.id.id_adapter_inventory__sale_product_button);
         }
     }
 }

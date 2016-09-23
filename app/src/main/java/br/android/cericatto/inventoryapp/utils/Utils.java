@@ -1,8 +1,12 @@
 package br.android.cericatto.inventoryapp.utils;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.ConnectivityManager;
+
+import br.android.cericatto.inventoryapp.view.BlackBackgroundDialog;
 
 /**
  * Utils.java.
@@ -20,6 +24,17 @@ public class Utils {
         ConnectivityManager connectivityManager = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
         Boolean hasConnection = connectivityManager.getActiveNetworkInfo() != null;
         return hasConnection;
+    }
+
+    public static void callBackgroundDialog(Activity context, Dialog inputDialog) {
+        final BlackBackgroundDialog backgroundDialog = new BlackBackgroundDialog(context);
+        backgroundDialog.show();
+        inputDialog.show();
+        inputDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            public void onDismiss(final DialogInterface dialog) {
+                backgroundDialog.dismiss();
+            }
+        });
     }
 
     //--------------------------------------------------

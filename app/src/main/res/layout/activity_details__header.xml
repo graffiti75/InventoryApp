@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <!--=============== IMAGE ===============-->
+
+    <ImageView
+        android:id="@+id/id_activity_details__image_view"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey_700"
+        android:scaleType="fitXY" />
+
+    <!--=============== HEADER ===============-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Name -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TitleTextView"
+                android:text="Name:" />
+
+            <TextView
+                android:id="@+id/id_activity_details__name_text_view"
+                style="@style/FieldTextView"
+                android:text="Pear" />
+        </LinearLayout>
+
+        <!-- Quantity Available -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TitleTextView"
+                android:text="Quantity Available:" />
+
+            <TextView
+                android:id="@+id/id_activity_details__quantity_text_view"
+                style="@style/FieldTextView"
+                android:text="35" />
+        </LinearLayout>
+
+        <!-- Price -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TitleTextView"
+                android:text="Price:" />
+
+            <TextView
+                android:id="@+id/id_activity_details__price_text_view"
+                style="@style/FieldTextView"
+                android:text="US$2,00" />
+        </LinearLayout>
+
+        <!-- Supplier -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TitleTextView"
+                android:text="Supplier:" />
+
+            <TextView
+                android:id="@+id/id_activity_details__supplier_text_view"
+                style="@style/FieldTextView"
+                android:text="John' Farm" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

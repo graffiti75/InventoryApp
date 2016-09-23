@@ -4,4 +4,6 @@
     <string name="app_name">InventoryApp</string>
     <string name="content_authority">br.android.cericatto.inventoryapp.database.InventoryProvider</string>
     <string name="database_error">Database error.</string>
+
+    <string name="activity_details_title">Details</string>
 </resources>
