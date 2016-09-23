@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 
 import br.android.cericatto.inventoryapp.view.BlackBackgroundDialog;
@@ -51,5 +52,25 @@ public class Utils {
             result = isNull || isZeroLength || isEmpty || contentOfTextIsLiteralNull;
         }
         return result;
+    }
+
+    //--------------------------------------------------
+    // Preference Methods
+    //--------------------------------------------------
+
+    public static void setPreference(Context context, String key, Boolean firstTime) {
+        // Gets the preference.
+        SharedPreferences preference = context.getSharedPreferences(Globals.GLOBAL_PREFERENCE, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preference.edit();
+
+        // Saves the preference.
+        editor.putBoolean(key, firstTime);
+        editor.commit();
+    }
+
+    public static Boolean getPreference(Context context, String key) {
+        SharedPreferences preference = context.getSharedPreferences(Globals.GLOBAL_PREFERENCE, Context.MODE_PRIVATE);
+        Boolean data = preference.getBoolean(key, true);
+        return data;
     }
 }

@@ -56,7 +56,7 @@ public class InventoryProvider extends ContentProvider {
     //--------------------------------------------------
 
     // Projection map for a query.
-    public static HashMap<String, String> sTeleprompterMap;
+    public static HashMap<String, String> sInventoryMap;
 
     // Maps content URI "patterns" to the integer values that were set above.
     private static final UriMatcher sUriMatcher;
@@ -101,7 +101,7 @@ public class InventoryProvider extends ContentProvider {
         switch (sUriMatcher.match(uri)) {
             // Maps all database column names.
             case INVENTORY:
-                queryBuilder.setProjectionMap(sTeleprompterMap);
+                queryBuilder.setProjectionMap(sInventoryMap);
                 break;
             case INVENTORY_ID:
                 queryBuilder.appendWhere(ID + "=" + uri.getLastPathSegment());

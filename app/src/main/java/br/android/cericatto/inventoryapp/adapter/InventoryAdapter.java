@@ -11,12 +11,14 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.android.cericatto.inventoryapp.R;
 import br.android.cericatto.inventoryapp.activity.DetailsActivity;
 import br.android.cericatto.inventoryapp.model.Inventory;
 import br.android.cericatto.inventoryapp.utils.ActivityUtils;
+import br.android.cericatto.inventoryapp.utils.Globals;
 import br.android.cericatto.inventoryapp.utils.Utils;
 import br.android.cericatto.inventoryapp.view.SaleProductDialog;
 
@@ -57,11 +59,14 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         Inventory item = mItems.get(position);
+        final String url = item.getPicture();
+        final String productName = item.getProductName();
+        final String quantityAvailable = item.getQuantityAvailable().toString();
+        final String price = item.getPrice().toString();
 
-        Glide.with(mActivity).load(item.getPicture()).into(holder.productImageView);
-
-        holder.nameTextView.setText(item.getProductName());
-        holder.quantityTextView.setText(item.getQuantityAvailable().toString());
+        Glide.with(mActivity).load(url).into(holder.productImageView);
+        holder.nameTextView.setText(productName);
+        holder.quantityTextView.setText(quantityAvailable);
 
         holder.saleProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +79,10 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityUtils.startActivity(mActivity, DetailsActivity.class);
+                String[] keys = new String[] { Globals.IMAGE_URL_EXTRA, Globals.PRODUCT_NAME_EXTRA,
+                    Globals.QUANTITY_AVAILABLE_EXTRA, Globals.PRICE_EXTRA };
+                Object[] values = new Object[] { url, productName, quantityAvailable, price };
+                ActivityUtils.startActivityExtras(mActivity, DetailsActivity.class, keys, values);
             }
         });
     }
@@ -85,6 +93,16 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
             return mItems.size();
         }
         return 0;
+    }
+
+    //--------------------------------------------------
+    // Other Methods
+    //--------------------------------------------------
+
+    public void setFilter(List<Inventory> list) {
+        mItems = new ArrayList<>();
+        mItems.addAll(list);
+        notifyDataSetChanged();
     }
 
     //--------------------------------------------------

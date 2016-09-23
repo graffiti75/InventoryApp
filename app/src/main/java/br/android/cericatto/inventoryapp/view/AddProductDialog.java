@@ -10,9 +10,18 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.List;
 
 import br.android.cericatto.inventoryapp.R;
+import br.android.cericatto.inventoryapp.activity.MainActivity;
+import br.android.cericatto.inventoryapp.database.DatabaseUtils;
+import br.android.cericatto.inventoryapp.database.InventoryProvider;
+import br.android.cericatto.inventoryapp.model.Inventory;
+import br.android.cericatto.inventoryapp.utils.ContentManager;
 import br.android.cericatto.inventoryapp.utils.Globals;
+import br.android.cericatto.inventoryapp.utils.Utils;
 
 /**
  * AddProductDialog.java.
@@ -67,14 +76,46 @@ public class AddProductDialog extends Dialog {
     }
 
     private void setLayout() {
-        EditText nameEditText = (EditText)findViewById(R.id.id_activity_add_product__product_name_edit_text);
-        EditText urlEditText = (EditText)findViewById(R.id.id_activity_add_product__image_url_edit_text);
-        EditText priceEditText = (EditText)findViewById(R.id.id_activity_add_product__price_edit_text);
+        final EditText nameEditText = (EditText)findViewById(R.id.id_activity_add_product__product_name_edit_text);
+        final EditText urlEditText = (EditText)findViewById(R.id.id_activity_add_product__image_url_edit_text);
+        final EditText priceEditText = (EditText)findViewById(R.id.id_activity_add_product__price_edit_text);
 
         Button addProductButton = (Button)findViewById(R.id.id_activity_add_product__button);
         addProductButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                dismiss();
+                String name = nameEditText.getText().toString();
+                String url = urlEditText.getText().toString();
+                String price = priceEditText.getText().toString();
+                Boolean nameEmpty = Utils.isEmpty(name);
+                Boolean urlEmpty = Utils.isEmpty(url);
+                Boolean priceEmpty = Utils.isEmpty(price);
+                Boolean priceIsDouble = true;
+                // Checks if the price is double.
+                try {
+                    Double.parseDouble(price);
+                } catch (NumberFormatException e) {
+                    priceIsDouble = false;
+                }
+                if (nameEmpty || urlEmpty || priceEmpty || !priceIsDouble) {
+                    Toast.makeText(mActivity, "Please don't add empty values.", Toast.LENGTH_LONG).show();
+                } else if (!priceIsDouble) {
+                    Toast.makeText(mActivity, "The price must be in decimal format.", Toast.LENGTH_LONG).show();
+                } else {
+                    // Update database.
+                    InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
+                    Integer id = ContentManager.getInstance().getInventoryList().size() + 1;
+                    Inventory inventory = new Inventory(id, Double.valueOf(price), 0, url, name);
+                    DatabaseUtils.insertInventory(mActivity, inventory);
+                    List<Inventory> list = DatabaseUtils.getInventoryList(mActivity);
+                    DatabaseUtils.closeDatabase(database);
+
+                    // Update adapter.
+                    MainActivity activity = (MainActivity)mActivity;
+                    activity.updateAdapter(list);
+
+                    // Dismiss dialog.
+                    dismiss();
+                }
             }
         });
     }

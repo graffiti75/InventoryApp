@@ -1,9 +1,7 @@
 package br.android.cericatto.inventoryapp.activity;
 
 import android.app.Activity;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,13 +9,20 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.android.cericatto.inventoryapp.R;
 import br.android.cericatto.inventoryapp.adapter.InventoryAdapter;
+import br.android.cericatto.inventoryapp.database.DataItems;
+import br.android.cericatto.inventoryapp.database.DatabaseUtils;
+import br.android.cericatto.inventoryapp.database.InventoryProvider;
 import br.android.cericatto.inventoryapp.model.Inventory;
+import br.android.cericatto.inventoryapp.utils.ContentManager;
+import br.android.cericatto.inventoryapp.utils.Globals;
 import br.android.cericatto.inventoryapp.utils.Utils;
 import br.android.cericatto.inventoryapp.view.AddProductDialog;
 import br.android.cericatto.inventoryapp.view.Navigation;
@@ -34,9 +39,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Attributes
     //--------------------------------------------------
 
+    /**
+     * Contexts.
+     */
+
     private Activity mActivity = MainActivity.this;
+
+    /**
+     * Layout.
+     */
+
     private RecyclerView mRecyclerView;
+    private TextView mEmptyTextView;
     private Button mAddProductButton;
+
+    /**
+     * Adapter.
+     */
+
     private InventoryAdapter mAdapter;
 
     //--------------------------------------------------
@@ -63,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Methods
     //--------------------------------------------------
 
-    public void initToolbar(Boolean homeEnabled) {
+    private void initToolbar(Boolean homeEnabled) {
         Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
@@ -73,8 +93,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setLayout() {
-
         mRecyclerView = (RecyclerView)findViewById(R.id.id_activity_main__recycler_view);
+        mEmptyTextView = (TextView)findViewById(R.id.id_activity_main__empty_text_view);
+
         mAddProductButton = (Button)findViewById(R.id.id_activity_main__add_product_button);
         mAddProductButton.setOnClickListener(this);
     }
@@ -86,35 +107,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        // Sets the adapter.
         List<Inventory> list = populateRecyclerView();
-        mAdapter = new InventoryAdapter(mActivity, list);
-        mRecyclerView.setAdapter(mAdapter);
+        if (list == null || list.size() < 1) {
+            // Sets the empty TextView.
+            mRecyclerView.setVisibility(View.GONE);
+            mEmptyTextView.setVisibility(View.VISIBLE);
+        } else {
+            // Sets the adapter.
+            mRecyclerView.setVisibility(View.VISIBLE);
+            mEmptyTextView.setVisibility(View.GONE);
+            mAdapter = new InventoryAdapter(mActivity, list);
+            mRecyclerView.setAdapter(mAdapter);
+        }
     }
 
     private List<Inventory> populateRecyclerView() {
-        List<Inventory> list = new ArrayList<>();
-
-        Inventory item = new Inventory(1, 1d, 25, "https://realfood.tesco.com/media/images/Orange-and-almond-srping-cake-hero-58d07750-0952-47eb-bc41-a1ef9b81c01a-0-472x310.jpg", "Orange");
-        list.add(item);
-        item = new Inventory(2, 1.5d, 20, "http://www.nutraingredients-usa.com/var/plain_site/storage/images/publications/food-beverage-nutrition/nutraingredients-usa.com/research/study-finds-widespread-adulteration-of-grape-seed-extract/9510929-1-eng-GB/Study-finds-widespread-adulteration-of-grape-seed-extract_strict_xxl.jpg", "Bunch of grapes");
-        list.add(item);
-        item = new Inventory(3, 1d, 30, "http://lymanorchards.com/files/7013/6725/1487/apples.jpg", "Apple");
-        list.add(item);
-        item = new Inventory(4, 0.5d, 35, "https://www.organicfacts.net/wp-content/uploads/2013/06/Strawberry1.jpg", "Strawberry");
-        list.add(item);
-        item = new Inventory(5, 0.5d, 45, "https://www.organicfacts.net/wp-content/uploads/2013/05/Banana3.jpg", "Banana");
-        list.add(item);
-        item = new Inventory(6, 2.5d, 15, "http://weknowyourdreams.com/images/pineapple/pineapple-08.jpg", "Pineapple");
-        list.add(item);
-        item = new Inventory(7, 0.5d, 35, "http://weknowyourdreams.com/images/potato/potato-04.jpg", "Potato");
-        list.add(item);
-        item = new Inventory(8, 0.5d, 20, "http://assets.inhabitat.com/wp-content/blogs.dir/1/files/2012/06/red-tomato-meteorite.jpg", "Tomato");
-        list.add(item);
-        item = new Inventory(9, 0.75d, 30, "http://www.newfoxy.com/wp-content/uploads/2016/05/onions.jpg", "Onion");
-        list.add(item);
-
+        Boolean firstTime = Utils.getPreference(mActivity, Globals.CONTROL);
+        InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
+        List<Inventory> list = null;
+        if (firstTime) {
+            Utils.setPreference(mActivity, Globals.CONTROL, false);
+            list = new ArrayList<>();
+            // Check database.
+            Boolean success = true;
+            for (int i = 1; (i <= DataItems.NAME.length) && (success); i++) {
+                Inventory item = new Inventory(i, DataItems.PRICE[i - 1], DataItems.QUANTITY[i - 1],
+                    DataItems.URL[i - 1], DataItems.NAME[i - 1]);
+                success = DatabaseUtils.insertInventory(mActivity, item);
+                list.add(item);
+            }
+            if (!success) {
+                Toast.makeText(mActivity, R.string.database_error, Toast.LENGTH_LONG).show();
+            }
+        } else {
+            // Check database.
+            Inventory inventory = DatabaseUtils.getInventory(mActivity, 1);
+            if (inventory != null) {
+                list = DatabaseUtils.getInventoryList(mActivity);
+            }
+        }
+        DatabaseUtils.closeDatabase(database);
+        ContentManager.getInstance().setInventoryList(list);
         return list;
+    }
+
+    public void updateAdapter(List<Inventory> list) {
+        mAdapter.setFilter(list);
     }
 
     //--------------------------------------------------

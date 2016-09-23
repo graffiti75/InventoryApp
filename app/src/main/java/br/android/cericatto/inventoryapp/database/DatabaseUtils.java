@@ -59,14 +59,16 @@ public class DatabaseUtils {
      */
     public static Inventory getInventory(Context context, Integer _id) {
         Uri inventories = Uri.parse(InventoryProvider.CONTENT_PROVIDER_URL);
-        Inventory inventory;
+        Inventory inventory = null;
         Cursor cursor = context.getContentResolver().query(inventories, null, InventoryProvider.ID + " = " + _id, null, null);
-        if (!cursor.moveToFirst()) {
-            inventory = null;
-        } else {
-            do {
-                inventory = getInventoryFromCursor(cursor);
-            } while (cursor.moveToNext());
+        if (cursor != null) {
+            if (!cursor.moveToFirst()) {
+                inventory = null;
+            } else {
+                do {
+                    inventory = getInventoryFromCursor(cursor);
+                } while (cursor.moveToNext());
+            }
         }
         return inventory;
     }
