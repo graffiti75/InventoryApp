@@ -24,6 +24,7 @@ public class Globals {
      * Extras.
      */
 
+    public static final String ID_EXTRA = "id_extra";
     public static final String IMAGE_URL_EXTRA = "image_url_extra";
     public static final String PRODUCT_NAME_EXTRA = "product_name_extra";
     public static final String QUANTITY_AVAILABLE_EXTRA = "quantity_available_extra";

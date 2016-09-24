@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,6 +17,8 @@ import com.bumptech.glide.Glide;
 
 import br.android.cericatto.inventoryapp.R;
 import br.android.cericatto.inventoryapp.utils.Globals;
+import br.android.cericatto.inventoryapp.utils.Utils;
+import br.android.cericatto.inventoryapp.view.DeleteProductDialog;
 import br.android.cericatto.inventoryapp.view.Navigation;
 
 /**
@@ -58,6 +59,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
      * Extras.
      */
 
+    private Integer mId;
     private String mImageUrl;
     private String mProductName;
     private String mQuantityAvailable;
@@ -119,6 +121,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     private void getExtras() {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
+            mId = extras.getInt(Globals.ID_EXTRA);
             mImageUrl = extras.getString(Globals.IMAGE_URL_EXTRA);
             mProductName = extras.getString(Globals.PRODUCT_NAME_EXTRA);
             mQuantityAvailable = extras.getString(Globals.QUANTITY_AVAILABLE_EXTRA);
@@ -128,6 +131,9 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
     private void setLayout() {
         mOrderMoreLinearLayout = (LinearLayout)findViewById(R.id.id_activity_details__order_more_linear_layout);
+        mOrderMoreLinearLayout.setOnClickListener(this);
+
+        mOrderMoreLinearLayout = (LinearLayout)findViewById(R.id.id_activity_details__delete_product_linear_layout);
         mOrderMoreLinearLayout.setOnClickListener(this);
 
         mUrlImageView = (ImageView)findViewById(R.id.id_activity_details__image_view);
@@ -143,6 +149,22 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         mPriceTextView.setText("US$" + mPrice);
     }
 
+    private void sendEmail() {
+        String text = getString(R.string.activity_details__ask_more) + mProductName
+            + getString(R.string.activity_details__please);
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO,
+            Uri.fromParts(getString(R.string.activity_details__mailto), EMAIL, null));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.activity_details__email_order_more)
+            + mProductName);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, text);
+        startActivity(Intent.createChooser(emailIntent, getString(R.string.activity_details__send_email)));
+    }
+
+    private void deleteProduct() {
+        DeleteProductDialog dialog = new DeleteProductDialog(mActivity, mId);
+        Utils.callBackgroundDialog(mActivity, dialog);
+    }
+
     //--------------------------------------------------
     // View.OnClickListener
     //--------------------------------------------------
@@ -151,11 +173,10 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.id_activity_details__order_more_linear_layout:
-                String text = "I would like to ask for more " + mProductName + ", please.";
-                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", EMAIL, null));
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Order more " + mProductName);
-                emailIntent.putExtra(Intent.EXTRA_TEXT, text);
-                startActivity(Intent.createChooser(emailIntent, "Send email"));
+                sendEmail();
+                break;
+            case R.id.id_activity_details__delete_product_linear_layout:
+                deleteProduct();
                 break;
         }
     }

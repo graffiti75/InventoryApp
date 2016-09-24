@@ -86,37 +86,46 @@ public class AddProductDialog extends Dialog {
                 String name = nameEditText.getText().toString();
                 String url = urlEditText.getText().toString();
                 String price = priceEditText.getText().toString();
-                Boolean nameEmpty = Utils.isEmpty(name);
-                Boolean urlEmpty = Utils.isEmpty(url);
-                Boolean priceEmpty = Utils.isEmpty(price);
-                Boolean priceIsDouble = true;
-                // Checks if the price is double.
-                try {
-                    Double.parseDouble(price);
-                } catch (NumberFormatException e) {
-                    priceIsDouble = false;
-                }
-                if (nameEmpty || urlEmpty || priceEmpty || !priceIsDouble) {
-                    Toast.makeText(mActivity, "Please don't add empty values.", Toast.LENGTH_LONG).show();
-                } else if (!priceIsDouble) {
-                    Toast.makeText(mActivity, "The price must be in decimal format.", Toast.LENGTH_LONG).show();
-                } else {
-                    // Update database.
-                    InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
-                    Integer id = ContentManager.getInstance().getInventoryList().size() + 1;
-                    Inventory inventory = new Inventory(id, Double.valueOf(price), 0, url, name);
-                    DatabaseUtils.insertInventory(mActivity, inventory);
-                    List<Inventory> list = DatabaseUtils.getInventoryList(mActivity);
-                    DatabaseUtils.closeDatabase(database);
-
-                    // Update adapter.
-                    MainActivity activity = (MainActivity)mActivity;
-                    activity.updateAdapter(list);
-
-                    // Dismiss dialog.
-                    dismiss();
-                }
+                addProduct(name, url, price);
             }
         });
+    }
+
+    private List<Inventory> updateDatabase(String name, String url, String price) {
+        InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
+        Integer id = ContentManager.getInstance().getInventoryList().size() + 1;
+        Inventory inventory = new Inventory(id, Double.valueOf(price), 0, url, name);
+        DatabaseUtils.insertInventory(mActivity, inventory);
+        List<Inventory> list = DatabaseUtils.getInventoryList(mActivity);
+        DatabaseUtils.closeDatabase(database);
+        return list;
+    }
+
+    private void addProduct(String name, String url, String price) {
+        // Verifications.
+        Boolean nameEmpty = Utils.isEmpty(name);
+        Boolean urlEmpty = Utils.isEmpty(url);
+        Boolean priceEmpty = Utils.isEmpty(price);
+
+        // Checks if the price is of type Double.
+        Boolean priceIsDouble = true;
+        try {
+            Double.parseDouble(price);
+        } catch (NumberFormatException e) {
+            priceIsDouble = false;
+        }
+
+        // Checks if we can update the database and adapter.
+        if (nameEmpty || urlEmpty || priceEmpty || !priceIsDouble) {
+            Toast.makeText(mActivity, R.string.dialog_add_product__empty_values, Toast.LENGTH_LONG).show();
+        } else if (!priceIsDouble) {
+            Toast.makeText(mActivity, R.string.dialog_add_product__price_decimal, Toast.LENGTH_LONG).show();
+        } else {
+            // Updates database and adapter.
+            List<Inventory> list = updateDatabase(name, url, price);
+            MainActivity activity = (MainActivity)mActivity;
+            activity.updateAdapter(list);
+            dismiss();
+        }
     }
 }

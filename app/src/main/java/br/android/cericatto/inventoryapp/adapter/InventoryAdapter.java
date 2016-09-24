@@ -1,6 +1,7 @@
 package br.android.cericatto.inventoryapp.adapter;
 
 import android.app.Activity;
+import android.provider.ContactsContract;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,8 @@ import java.util.List;
 
 import br.android.cericatto.inventoryapp.R;
 import br.android.cericatto.inventoryapp.activity.DetailsActivity;
+import br.android.cericatto.inventoryapp.database.DatabaseUtils;
+import br.android.cericatto.inventoryapp.database.InventoryProvider;
 import br.android.cericatto.inventoryapp.model.Inventory;
 import br.android.cericatto.inventoryapp.utils.ActivityUtils;
 import br.android.cericatto.inventoryapp.utils.Globals;
@@ -59,6 +62,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         Inventory item = mItems.get(position);
+        final Integer id = item.getId();
         final String url = item.getPicture();
         final String productName = item.getProductName();
         final String quantityAvailable = item.getQuantityAvailable().toString();
@@ -71,7 +75,8 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
         holder.saleProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SaleProductDialog dialog = new SaleProductDialog(mActivity);
+                // Opens the dialog.
+                SaleProductDialog dialog = new SaleProductDialog(mActivity, id);
                 Utils.callBackgroundDialog(mActivity, dialog);
             }
         });
@@ -79,9 +84,9 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String[] keys = new String[] { Globals.IMAGE_URL_EXTRA, Globals.PRODUCT_NAME_EXTRA,
-                    Globals.QUANTITY_AVAILABLE_EXTRA, Globals.PRICE_EXTRA };
-                Object[] values = new Object[] { url, productName, quantityAvailable, price };
+                String[] keys = new String[] { Globals.ID_EXTRA, Globals.IMAGE_URL_EXTRA,
+                    Globals.PRODUCT_NAME_EXTRA, Globals.QUANTITY_AVAILABLE_EXTRA, Globals.PRICE_EXTRA };
+                Object[] values = new Object[] { id, url, productName, quantityAvailable, price };
                 ActivityUtils.startActivityExtras(mActivity, DetailsActivity.class, keys, values);
             }
         });

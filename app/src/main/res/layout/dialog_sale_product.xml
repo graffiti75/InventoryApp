@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Are you sure you want to\nsale 1 unit of this product?"
+            android:text="@string/dialog_sale_product__question"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -40,14 +40,14 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:text="Yes" />
+                android:text="@string/dialog__yes" />
 
             <Button
                 android:id="@+id/id_dialog_sell_product__no_button"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:text="No" />
+                android:text="@string/dialog__no" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

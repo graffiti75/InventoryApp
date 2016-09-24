@@ -33,12 +33,11 @@
 
             <TextView
                 style="@style/TitleTextView"
-                android:text="Name:" />
+                android:text="@string/activity_details__name_label" />
 
             <TextView
                 android:id="@+id/id_activity_details__name_text_view"
-                style="@style/FieldTextView"
-                android:text="Pear" />
+                style="@style/FieldTextView" />
         </LinearLayout>
 
         <!-- Quantity Available -->
@@ -51,12 +50,11 @@
 
             <TextView
                 style="@style/TitleTextView"
-                android:text="Quantity Available:" />
+                android:text="@string/activity_details__quantity_label" />
 
             <TextView
                 android:id="@+id/id_activity_details__quantity_text_view"
-                style="@style/FieldTextView"
-                android:text="35" />
+                style="@style/FieldTextView" />
         </LinearLayout>
 
         <!-- Price -->
@@ -69,12 +67,11 @@
 
             <TextView
                 style="@style/TitleTextView"
-                android:text="Price:" />
+                android:text="@string/activity_details__price_label" />
 
             <TextView
                 android:id="@+id/id_activity_details__price_text_view"
-                style="@style/FieldTextView"
-                android:text="US$2,00" />
+                style="@style/FieldTextView" />
         </LinearLayout>
 
         <!-- Supplier -->
@@ -87,12 +84,12 @@
 
             <TextView
                 style="@style/TitleTextView"
-                android:text="Supplier:" />
+                android:text="@string/activity_details__supplier_label" />
 
             <TextView
                 android:id="@+id/id_activity_details__supplier_text_view"
                 style="@style/FieldTextView"
-                android:text="John' Farm" />
+                android:text="@string/activity_details__supplier" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

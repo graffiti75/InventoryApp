@@ -69,6 +69,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         initToolbar(false);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         setLayout();
         setRecyclerView();
     }
@@ -122,33 +127,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private List<Inventory> populateRecyclerView() {
-        Boolean firstTime = Utils.getPreference(mActivity, Globals.CONTROL);
+        boolean firstTime = Utils.getPreference(mActivity, Globals.CONTROL);
         InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
-        List<Inventory> list = null;
+        List<Inventory> list = checkFirstTime(firstTime);
+        DatabaseUtils.closeDatabase(database);
+        ContentManager.getInstance().setInventoryList(list);
+        return list;
+    }
+
+    private List<Inventory> checkFirstTime(boolean firstTime) {
+        List<Inventory> list = new ArrayList<>();
         if (firstTime) {
             Utils.setPreference(mActivity, Globals.CONTROL, false);
-            list = new ArrayList<>();
-            // Check database.
-            Boolean success = true;
-            for (int i = 1; (i <= DataItems.NAME.length) && (success); i++) {
-                Inventory item = new Inventory(i, DataItems.PRICE[i - 1], DataItems.QUANTITY[i - 1],
-                    DataItems.URL[i - 1], DataItems.NAME[i - 1]);
-                success = DatabaseUtils.insertInventory(mActivity, item);
-                list.add(item);
-            }
+            // Adds Inventory' to database.
+            boolean success = addListToDatabase();
             if (!success) {
                 Toast.makeText(mActivity, R.string.database_error, Toast.LENGTH_LONG).show();
             }
         } else {
-            // Check database.
+            // Check if it exists an Inventory into the database.
             Inventory inventory = DatabaseUtils.getInventory(mActivity, 1);
             if (inventory != null) {
                 list = DatabaseUtils.getInventoryList(mActivity);
             }
         }
-        DatabaseUtils.closeDatabase(database);
-        ContentManager.getInstance().setInventoryList(list);
         return list;
+    }
+
+    private boolean addListToDatabase() {
+        List<Inventory> list = new ArrayList<>();
+        boolean success = true;
+        for (int i = 1; (i <= DataItems.NAME.length) && (success); i++) {
+            Inventory item = new Inventory(i, DataItems.PRICE[i - 1], DataItems.QUANTITY[i - 1],
+                DataItems.URL[i - 1], DataItems.NAME[i - 1]);
+            success = DatabaseUtils.insertInventory(mActivity, item);
+            list.add(item);
+        }
+        return success;
+    }
+
+    public void updateAdapter() {
+        InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
+        List<Inventory> list = DatabaseUtils.getInventoryList(mActivity);
+        DatabaseUtils.closeDatabase(database);
+        mAdapter.setFilter(list);
     }
 
     public void updateAdapter(List<Inventory> list) {

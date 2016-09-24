@@ -9,8 +9,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import br.android.cericatto.inventoryapp.R;
+import br.android.cericatto.inventoryapp.database.DatabaseUtils;
+import br.android.cericatto.inventoryapp.database.InventoryProvider;
 import br.android.cericatto.inventoryapp.utils.Globals;
 
 /**
@@ -31,13 +34,20 @@ public class DeleteProductDialog extends Dialog {
 
     private Activity mActivity;
 
+    /**
+     * Database.
+     */
+
+    private Integer mInventoryId;
+
     //--------------------------------------------------
     // Constructor
     //--------------------------------------------------
 
-    public DeleteProductDialog(Activity activity) {
+    public DeleteProductDialog(Activity activity, Integer inventoryId) {
         super(activity, Globals.DIALOG_THEME);
         mActivity = activity;
+        mInventoryId = inventoryId;
     }
 
     //--------------------------------------------------
@@ -69,7 +79,7 @@ public class DeleteProductDialog extends Dialog {
         Button yesButton = (Button)findViewById(R.id.id_dialog_delete_product__yes_button);
         yesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                // TODO
+                deleteProduct();
             }
         });
 
@@ -79,5 +89,15 @@ public class DeleteProductDialog extends Dialog {
                 dismiss();
             }
         });
+    }
+
+    private void deleteProduct() {
+        InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
+        boolean success = DatabaseUtils.deleteInventory(mActivity, mInventoryId);
+        if (!success) {
+            Toast.makeText(mActivity, R.string.database_error, Toast.LENGTH_LONG).show();
+        }
+        DatabaseUtils.closeDatabase(database);
+        mActivity.finish();
     }
 }

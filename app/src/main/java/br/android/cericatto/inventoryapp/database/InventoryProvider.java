@@ -44,7 +44,7 @@ public class InventoryProvider extends ContentProvider {
     public static final int DATABASE_VERSION = 1;
     public static final String CREATE_TABLE =
         "create table " + TABLE_NAME +
-            " (id integer primary key, price real not null, quantity_available integer," +
+            " (id integer, price real not null, quantity_available integer," +
             " picture text, product_name text)";
 
     // Integer values used in content URI.

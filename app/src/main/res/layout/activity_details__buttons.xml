@@ -27,7 +27,7 @@
 
             <TextView
                 style="@style/LineButton"
-                android:text="Increase Quantity" />
+                android:text="@string/activity_details__increase_quantity" />
         </LinearLayout>
 
         <!-- Type Quantity -->
@@ -40,7 +40,7 @@
             android:background="@color/grey_500"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Type Quantity"
+            android:text="@string/activity_details__type_quantity" />
             android:textColor="@color/grey_100"
             android:textSize="14sp" />
 
@@ -59,7 +59,7 @@
 
             <TextView
                 style="@style/LineButton"
-                android:text="Decrease Quantity" />
+                android:text="@string/activity_details__decrease_quantity" />
         </LinearLayout>
     </LinearLayout>
 
@@ -89,7 +89,7 @@
 
             <TextView
                 style="@style/LineButton"
-                android:text="Order More" />
+                android:text="@string/activity_details__order_more" />
         </LinearLayout>
 
         <!-- Delete Product -->
@@ -107,7 +107,7 @@
 
             <TextView
                 style="@style/LineButton"
-                android:text="Delete Product" />
+                android:text="@string/activity_details__delete_product" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

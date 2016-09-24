@@ -23,54 +23,36 @@
             <!-- Product Name -->
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dialog_add_product__name_label"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                style="@style/TitleTextViewDialog"
+                android:text="@string/dialog_add_product__name_label" />
 
             <EditText
                 android:id="@+id/id_activity_add_product__product_name_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/dialog_add_product__name_hint"
-                android:inputType="textCapSentences|textMultiLine"
-                android:textSize="16sp" />
+                style="@style/EditTextDialog"
+                android:hint="@string/dialog_add_product__name_hint" />
 
             <!-- Product Image -->
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dialog_add_product__image_label"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                style="@style/TitleTextViewDialog"
+                android:text="@string/dialog_add_product__image_label" />
 
             <EditText
                 android:id="@+id/id_activity_add_product__image_url_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/EditTextDialog"
                 android:hint="@string/dialog_add_product__image_hint"
-                android:inputType="textCapSentences|textMultiLine"
-                android:maxLines="3"
-                android:textSize="16sp" />
+                android:maxLines="3" />
 
             <!-- Product Price -->
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dialog_add_product__price_label"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                style="@style/TitleTextViewDialog"
+                android:text="@string/dialog_add_product__price_label" />
 
             <EditText
                 android:id="@+id/id_activity_add_product__price_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/dialog_add_product__price_hint"
-                android:inputType="textCapSentences|textMultiLine"
-                android:textSize="16sp" />
+                style="@style/EditTextDialog"
+                android:hint="@string/dialog_add_product__price_hint" />
 
             <!-- Button -->
 
@@ -79,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:text="Add Product" />
+                android:text="@string/dialog_add_product__add_product" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

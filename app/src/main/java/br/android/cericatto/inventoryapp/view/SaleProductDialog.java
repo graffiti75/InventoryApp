@@ -10,8 +10,15 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.List;
 
 import br.android.cericatto.inventoryapp.R;
+import br.android.cericatto.inventoryapp.activity.MainActivity;
+import br.android.cericatto.inventoryapp.database.DatabaseUtils;
+import br.android.cericatto.inventoryapp.database.InventoryProvider;
+import br.android.cericatto.inventoryapp.model.Inventory;
 import br.android.cericatto.inventoryapp.utils.Globals;
 
 /**
@@ -32,13 +39,20 @@ public class SaleProductDialog extends Dialog {
 
     private Activity mActivity;
 
+    /**
+     * Database.
+     */
+
+    private Integer mInventoryId;
+
     //--------------------------------------------------
     // Constructor
     //--------------------------------------------------
 
-    public SaleProductDialog(Activity activity) {
+    public SaleProductDialog(Activity activity, Integer inventoryId) {
         super(activity, Globals.DIALOG_THEME);
         mActivity = activity;
+        mInventoryId = inventoryId;
     }
 
     //--------------------------------------------------
@@ -70,7 +84,9 @@ public class SaleProductDialog extends Dialog {
         Button yesButton = (Button)findViewById(R.id.id_dialog_sell_product__yes_button);
         yesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                // TODO
+                updateDatabase();
+                updateAdapter();
+                dismiss();
             }
         });
 
@@ -80,5 +96,29 @@ public class SaleProductDialog extends Dialog {
                 dismiss();
             }
         });
+    }
+
+    private void updateDatabase() {
+        InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
+        Inventory current = DatabaseUtils.getInventory(mActivity, mInventoryId);
+        Integer id = current.getId();
+        Double price = current.getPrice();
+        Integer newQuantity = current.getQuantityAvailable() - 1;
+        if (newQuantity <= 0) {
+            newQuantity = 0;
+        }
+        String picture = current.getPicture();
+        String name = current.getProductName();
+        Inventory newInventory = new Inventory(id, price, newQuantity, picture, name);
+        Boolean success = DatabaseUtils.updateInventory(mActivity, newInventory);
+        if (!success) {
+            Toast.makeText(mActivity, R.string.database_error, Toast.LENGTH_LONG).show();
+        }
+        DatabaseUtils.closeDatabase(database);
+    }
+
+    private void updateAdapter() {
+        MainActivity activity = (MainActivity)mActivity;
+        activity.updateAdapter();
     }
 }

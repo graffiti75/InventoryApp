@@ -31,7 +31,7 @@
         <provider
             android:name=".database.InventoryProvider"
             android:authorities="@string/content_authority"
-            android:exported="true"
+            android:exported="false"
             android:syncable="true" />
     </application>
 </manifest>

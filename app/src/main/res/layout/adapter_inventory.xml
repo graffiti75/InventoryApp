@@ -20,7 +20,6 @@
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_marginLeft="5dp"
-            android:contentDescription="Sale Product"
             android:src="@mipmap/ic_remove_circle_black_48dp" />
 
         <LinearLayout
@@ -61,12 +60,11 @@
 
                     <TextView
                         style="@style/TitleTextView"
-                        android:text="Name:" />
+                        android:text="@string/adapter_inventory__name_label" />
 
                     <TextView
                         android:id="@+id/id_adapter_inventory__name_text_view"
-                        style="@style/FieldTextView"
-                        android:text="Pear" />
+                        style="@style/FieldTextView" />
                 </LinearLayout>
 
                 <!-- Quantity Available -->
@@ -79,12 +77,11 @@
 
                     <TextView
                         style="@style/TitleTextView"
-                        android:text="Quantity Available:" />
+                        android:text="@string/adapter_inventory__quantity_label" />
 
                     <TextView
                         android:id="@+id/id_adapter_inventory__quantity_text_view"
-                        style="@style/FieldTextView"
-                        android:text="35" />
+                        style="@style/FieldTextView" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

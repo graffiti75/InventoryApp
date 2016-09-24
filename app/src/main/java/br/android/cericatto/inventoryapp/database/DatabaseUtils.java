@@ -93,11 +93,12 @@ public class DatabaseUtils {
     }
 
     /**
-     * Updates a Inventory.
+     * Updates a Inventory.x
      */
     public static Boolean updateInventory(Context context, Inventory inventory) {
         ContentValues values = getContentValues(inventory);
-        int rowsAffected = context.getContentResolver().update(InventoryProvider.CONTENT_URI, values, null, null);
+        int rowsAffected = context.getContentResolver().update(InventoryProvider.CONTENT_URI, values,
+            "id = " + inventory.getId(), null);
 
         Boolean result = false;
         if (rowsAffected > 0) {

@@ -5,6 +5,9 @@
     <string name="content_authority">br.android.cericatto.inventoryapp.database.InventoryProvider</string>
     <string name="database_error">Database error.</string>
 
+    <string name="dialog__yes">Yes</string>
+    <string name="dialog__no">No</string>
+
     <!--=============== SCREENS ===============-->
 
     <!-- Main Activity -->
@@ -15,6 +18,37 @@
 
     <string name="activity_details__title">Details</string>
 
+    <string name="activity_details__name_label">Name:</string>
+    <string name="activity_details__quantity_label">Quantity Available:</string>
+    <string name="activity_details__price_label">Price:</string>
+    <string name="activity_details__supplier_label">Supplier:</string>
+
+    <string name="activity_details__increase_quantity">Increase Quantity</string>
+    <string name="activity_details__type_quantity">Type Quantity</string>
+    <string name="activity_details__decrease_quantity">Decrease Quantity</string>
+    <string name="activity_details__order_more">Order More</string>
+    <string name="activity_details__delete_product">Delete Product</string>
+    <string name="activity_details__supplier">John\'s Farm</string>
+
+    <string name="activity_details__ask_more">I would like to ask for more </string>
+    <string name="activity_details__please">, please.</string>
+    <string name="activity_details__mailto">mailto</string>
+    <string name="activity_details__email_order_more">Order more </string>
+    <string name="activity_details__send_email">Send email</string>
+
+    <!-- Inventory Adapter -->
+
+    <string name="adapter_inventory__name_label">Name:</string>
+    <string name="adapter_inventory__quantity_label">Quantity Available:</string>
+
+    <!-- Sale Product Dialog -->
+
+    <string name="dialog_sale_product__question">Are you sure you want to\nsale 1 unit of this product?</string>
+
+    <!-- Delete Product Dialog -->
+
+    <string name="dialog_delete_product__question">Are you sure you want to\ndelete this product?</string>
+
     <!-- Add Product Dialog -->
 
     <string name="dialog_add_product__name_label">Product Name</string>
@@ -23,4 +57,8 @@
     <string name="dialog_add_product__image_hint">Type the image url</string>
     <string name="dialog_add_product__price_label">Product Price</string>
     <string name="dialog_add_product__price_hint">Type the product price in decimal format</string>
+    <string name="dialog_add_product__add_product">Add Product</string>
+
+    <string name="dialog_add_product__empty_values">Please don\'t add empty values.</string>
+    <string name="dialog_add_product__price_decimal">The price must be in decimal format.</string>
 </resources>
