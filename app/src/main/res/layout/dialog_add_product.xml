@@ -27,7 +27,7 @@
                 android:text="@string/dialog_add_product__name_label" />
 
             <EditText
-                android:id="@+id/id_activity_add_product__product_name_edit_text"
+                android:id="@+id/id_dialog_add_product__product_name_edit_text"
                 style="@style/EditTextDialog"
                 android:hint="@string/dialog_add_product__name_hint" />
 
@@ -38,7 +38,7 @@
                 android:text="@string/dialog_add_product__image_label" />
 
             <EditText
-                android:id="@+id/id_activity_add_product__image_url_edit_text"
+                android:id="@+id/id_dialog_add_product__image_url_edit_text"
                 style="@style/EditTextDialog"
                 android:hint="@string/dialog_add_product__image_hint"
                 android:maxLines="3" />
@@ -50,14 +50,14 @@
                 android:text="@string/dialog_add_product__price_label" />
 
             <EditText
-                android:id="@+id/id_activity_add_product__price_edit_text"
+                android:id="@+id/id_dialog_add_product__price_edit_text"
                 style="@style/EditTextDialog"
                 android:hint="@string/dialog_add_product__price_hint" />
 
             <!-- Button -->
 
             <Button
-                android:id="@+id/id_activity_add_product__button"
+                android:id="@+id/id_dialog_add_product__button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"

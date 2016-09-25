@@ -33,14 +33,14 @@
         <!-- Type Quantity -->
 
         <TextView
-            android:id="@+id/id_activity_details__type_quantity_button"
+            android:id="@+id/id_activity_details__type_quantity_text_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:background="@color/grey_500"
             android:gravity="center"
             android:padding="5dp"
-            android:text="@string/activity_details__type_quantity" />
+            android:text="@string/activity_details__type_quantity"
             android:textColor="@color/grey_100"
             android:textSize="14sp" />
 

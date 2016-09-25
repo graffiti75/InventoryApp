@@ -76,11 +76,11 @@ public class AddProductDialog extends Dialog {
     }
 
     private void setLayout() {
-        final EditText nameEditText = (EditText)findViewById(R.id.id_activity_add_product__product_name_edit_text);
-        final EditText urlEditText = (EditText)findViewById(R.id.id_activity_add_product__image_url_edit_text);
-        final EditText priceEditText = (EditText)findViewById(R.id.id_activity_add_product__price_edit_text);
+        final EditText nameEditText = (EditText)findViewById(R.id.id_dialog_add_product__product_name_edit_text);
+        final EditText urlEditText = (EditText)findViewById(R.id.id_dialog_add_product__image_url_edit_text);
+        final EditText priceEditText = (EditText)findViewById(R.id.id_dialog_add_product__price_edit_text);
 
-        Button addProductButton = (Button)findViewById(R.id.id_activity_add_product__button);
+        Button addProductButton = (Button)findViewById(R.id.id_dialog_add_product__button);
         addProductButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 String name = nameEditText.getText().toString();

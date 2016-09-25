@@ -61,4 +61,10 @@
 
     <string name="dialog_add_product__empty_values">Please don\'t add empty values.</string>
     <string name="dialog_add_product__price_decimal">The price must be in decimal format.</string>
+
+    <!-- Type Quantity Dialog -->
+
+    <string name="dialog_type_quantity__label">Type Quantity</string>
+    <string name="dialog_type_quantity__hint">Type the new quantity of </string>
+    <string name="dialog_type_quantity__confirm">Confirm</string>
 </resources>

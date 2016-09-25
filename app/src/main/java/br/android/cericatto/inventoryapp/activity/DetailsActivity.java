@@ -16,10 +16,14 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import br.android.cericatto.inventoryapp.R;
+import br.android.cericatto.inventoryapp.database.DatabaseUtils;
+import br.android.cericatto.inventoryapp.database.InventoryProvider;
+import br.android.cericatto.inventoryapp.model.Inventory;
 import br.android.cericatto.inventoryapp.utils.Globals;
 import br.android.cericatto.inventoryapp.utils.Utils;
 import br.android.cericatto.inventoryapp.view.DeleteProductDialog;
 import br.android.cericatto.inventoryapp.view.Navigation;
+import br.android.cericatto.inventoryapp.view.TypeQuantityDialog;
 
 /**
  * MainActivity.java.
@@ -49,7 +53,12 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
      * Layout.
      */
 
+    private LinearLayout mIncreaseQuantityLinearLayout;
+    private LinearLayout mDecreaseQuantityLinearLayout;
+    private LinearLayout mDeleteProductLinearLayout;
     private LinearLayout mOrderMoreLinearLayout;
+
+    private TextView mTypeQuantityTextView;
     private ImageView mUrlImageView;
     private TextView mNameTextView;
     private TextView mQuantityAvailableTextView;
@@ -130,11 +139,20 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void setLayout() {
+        mIncreaseQuantityLinearLayout = (LinearLayout)findViewById(R.id.id_activity_details__increase_quantity_linear_layout);
+        mIncreaseQuantityLinearLayout.setOnClickListener(this);
+
+        mTypeQuantityTextView = (TextView)findViewById(R.id.id_activity_details__type_quantity_text_view);
+        mTypeQuantityTextView.setOnClickListener(this);
+
+        mDecreaseQuantityLinearLayout = (LinearLayout)findViewById(R.id.id_activity_details__decrease_quantity_linear_layout);
+        mDecreaseQuantityLinearLayout.setOnClickListener(this);
+
         mOrderMoreLinearLayout = (LinearLayout)findViewById(R.id.id_activity_details__order_more_linear_layout);
         mOrderMoreLinearLayout.setOnClickListener(this);
 
-        mOrderMoreLinearLayout = (LinearLayout)findViewById(R.id.id_activity_details__delete_product_linear_layout);
-        mOrderMoreLinearLayout.setOnClickListener(this);
+        mDeleteProductLinearLayout = (LinearLayout)findViewById(R.id.id_activity_details__delete_product_linear_layout);
+        mDeleteProductLinearLayout.setOnClickListener(this);
 
         mUrlImageView = (ImageView)findViewById(R.id.id_activity_details__image_view);
         Glide.with(mActivity).load(mImageUrl).into(mUrlImageView);
@@ -165,6 +183,31 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         Utils.callBackgroundDialog(mActivity, dialog);
     }
 
+    private void modifyQuantity(boolean add) {
+        // Updates database.
+        InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
+        Inventory current = DatabaseUtils.getInventory(mActivity, mId);
+        if (add) {
+            current.setQuantityAvailable(current.getQuantityAvailable() + 1);
+        } else {
+            current.setQuantityAvailable(current.getQuantityAvailable() - 1);
+        }
+        DatabaseUtils.updateInventory(mActivity, current);
+        DatabaseUtils.closeDatabase(database);
+
+        // Updates product info.
+        mQuantityAvailableTextView.setText(current.getQuantityAvailable().toString());
+    }
+
+    private void typeQuantity() {
+        TypeQuantityDialog dialog = new TypeQuantityDialog(mActivity, mId);
+        Utils.callBackgroundDialog(mActivity, dialog);
+    }
+
+    public void updateQuantity(Integer quantity) {
+        mQuantityAvailableTextView.setText(quantity.toString());
+    }
+
     //--------------------------------------------------
     // View.OnClickListener
     //--------------------------------------------------
@@ -172,6 +215,15 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.id_activity_details__increase_quantity_linear_layout:
+                modifyQuantity(true);
+                break;
+            case R.id.id_activity_details__type_quantity_text_view:
+                typeQuantity();
+                break;
+            case R.id.id_activity_details__decrease_quantity_linear_layout:
+                modifyQuantity(false);
+                break;
             case R.id.id_activity_details__order_more_linear_layout:
                 sendEmail();
                 break;

@@ -36,14 +36,14 @@
             android:padding="10dp">
 
             <Button
-                android:id="@+id/id_dialog_sell_product__yes_button"
+                android:id="@+id/id_dialog_sale_product__yes_button"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:text="@string/dialog__yes" />
 
             <Button
-                android:id="@+id/id_dialog_sell_product__no_button"
+                android:id="@+id/id_dialog_sale_product__no_button"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"

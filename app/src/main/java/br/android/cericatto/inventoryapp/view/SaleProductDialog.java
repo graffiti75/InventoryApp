@@ -81,7 +81,7 @@ public class SaleProductDialog extends Dialog {
     }
 
     private void setLayout() {
-        Button yesButton = (Button)findViewById(R.id.id_dialog_sell_product__yes_button);
+        Button yesButton = (Button)findViewById(R.id.id_dialog_sale_product__yes_button);
         yesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 updateDatabase();
@@ -90,7 +90,7 @@ public class SaleProductDialog extends Dialog {
             }
         });
 
-        Button noButton = (Button)findViewById(R.id.id_dialog_sell_product__no_button);
+        Button noButton = (Button)findViewById(R.id.id_dialog_sale_product__no_button);
         noButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 dismiss();

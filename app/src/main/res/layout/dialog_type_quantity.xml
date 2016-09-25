@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_activity_add_product__linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    android:background="@null"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- Product Name -->
+
+            <TextView
+                style="@style/TitleTextViewDialog"
+                android:text="@string/dialog_type_quantity__label" />
+
+            <EditText
+                android:id="@+id/id_dialog_type_quantity__edit_text"
+                style="@style/EditTextDialog"
+                android:hint="@string/dialog_type_quantity__hint" />
+
+            <!-- Button -->
+
+            <Button
+                android:id="@+id/id_dialog_type_quantity__button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="@string/dialog_type_quantity__confirm" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
