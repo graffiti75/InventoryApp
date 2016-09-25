@@ -5,7 +5,7 @@
         jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="24.0.2"
-        sha1="1565725b05679022d49c91dceeb800a0a9edccc9">
+        sha1="8c87e6eb085e62d5fd1cb78c88db52bdad65edc3">
         <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_20a5b2c19b16cc38a0537ee25fefaeb74b6c25a4/classes.dex" />
     </item>
     <item
@@ -40,7 +40,7 @@
         jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         revision="24.0.2"
-        sha1="2c367e45e7be30ae1454ba2a1248d1c33a111ea0">
+        sha1="a20a5e84455e12fc68f6355b1b99004dc7a56b81">
         <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_54ad4c5ac3f91c59a2b89aca7f4fcc52124afcd2/classes.dex" />
     </item>
     <item

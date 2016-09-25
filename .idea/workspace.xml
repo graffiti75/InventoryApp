@@ -18,19 +18,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/adapter/InventoryAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/adapter/InventoryAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/database/DatabaseUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/database/DatabaseUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/utils/ContentManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/utils/ContentManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/DetailsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/DetailsActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/utils/Utils.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/utils/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/AddProductDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/AddProductDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/DeleteProductDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/DeleteProductDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/SaleProductDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/SaleProductDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/TypeQuantityDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/TypeQuantityDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/adapter_inventory.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/adapter_inventory.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
@@ -53,55 +45,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="157" column="50" selection-start-line="157" selection-start-column="50" selection-end-line="157" selection-end-column="50" />
-              <folding>
-                <element signature="e#6065#6066#0" expanded="true" />
-                <element signature="e#6105#6106#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DetailsActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/DetailsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="181" column="53" selection-start-line="181" selection-start-column="53" selection-end-line="181" selection-end-column="53" />
+              <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
               <folding>
-                <element signature="e#3733#3765#0" expanded="true" />
-                <element signature="e#5844#5890#0" expanded="true" />
-                <element signature="e#5920#5964#0" expanded="true" />
-                <element signature="e#6054#6098#0" expanded="true" />
-                <element signature="e#6166#6220#0" expanded="true" />
-                <element signature="e#6361#6409#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/database/DatabaseUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddProductDialog.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/AddProductDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34402332">
-              <caret line="105" column="13" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
-              <folding>
-                <element signature="e#4111#4152#0" expanded="true" />
-                <element signature="e#4256#4298#0" expanded="true" />
-                <element signature="e#4474#4517#0" expanded="true" />
+                <element signature="e#3760#3792#0" expanded="true" />
+                <element signature="e#5871#5917#0" expanded="true" />
+                <element signature="e#5947#5991#0" expanded="true" />
+                <element signature="e#6081#6125#0" expanded="true" />
+                <element signature="e#6193#6247#0" expanded="true" />
+                <element signature="e#6388#6436#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,10 +66,31 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/DeleteProductDialog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+              <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="99" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/utils/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
               <folding>
-                <element signature="e#2759#2782#0" expanded="true" />
+                <element signature="e#947#1122#0" expanded="true" />
+                <element signature="e#1121#1122#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddProductDialog.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/AddProductDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.30029154">
+              <caret line="103" column="49" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1812,20 +1788,20 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_type_quantity.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_sale_product.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_add_product.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/DetailsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_details__buttons.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/utils/Utils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/DeleteProductDialog.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/SaleProductDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/TypeQuantityDialog.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/utils/ContentManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/adapter_inventory.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/adapter/InventoryAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/database/DatabaseUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/AddProductDialog.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/TypeQuantityDialog.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/DetailsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/DeleteProductDialog.java" />
       </list>
     </option>
   </component>
@@ -2472,63 +2448,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/DeleteProductDialog.java</url>
-          <line>89</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/database/DatabaseUtils.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/database/DatabaseUtils.java</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/MainActivity.java</url>
-          <line>151</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/MainActivity.java</url>
-          <line>77</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/MainActivity.java</url>
-          <line>115</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/MainActivity.java</url>
-          <line>131</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/MainActivity.java</url>
-          <line>138</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/DeleteProductDialog.java</url>
-          <line>94</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2884,31 +2804,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.606414">
-          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/SaleProductDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16909622">
           <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/TypeQuantityDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5845481">
-          <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
-          <folding>
-            <element signature="e#2238#2442#0" expanded="false" />
-            <element signature="e#2441#2442#0" expanded="false" />
-            <element signature="e#3285#3308#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2940,8 +2840,8 @@
         <state vertical-scroll-proportion="0.7381546">
           <caret line="54" column="26" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
           <folding>
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1302#1303#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="false" />
+            <element signature="e#1302#1303#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2959,51 +2859,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/DetailsActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="181" column="53" selection-start-line="181" selection-start-column="53" selection-end-line="181" selection-end-column="53" />
-          <folding>
-            <element signature="e#3733#3765#0" expanded="true" />
-            <element signature="e#5844#5890#0" expanded="true" />
-            <element signature="e#5920#5964#0" expanded="true" />
-            <element signature="e#6054#6098#0" expanded="true" />
-            <element signature="e#6166#6220#0" expanded="true" />
-            <element signature="e#6361#6409#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.72507554">
+          <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/database/DatabaseUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/DeleteProductDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding>
-            <element signature="e#2759#2782#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7643505">
-          <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.23760933">
+          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="157" column="50" selection-start-line="157" selection-start-column="50" selection-end-line="157" selection-end-column="50" />
+        <state vertical-scroll-proportion="-0.96209913">
+          <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="27" />
           <folding>
             <element signature="e#6065#6066#0" expanded="true" />
             <element signature="e#6105#6106#0" expanded="true" />
@@ -3011,15 +2886,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/TypeQuantityDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5626822">
+          <caret line="105" column="29" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
+          <folding>
+            <element signature="e#3014#3058#0" expanded="true" />
+            <element signature="e#3685#3708#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+          <folding>
+            <element signature="e#947#1122#0" expanded="true" />
+            <element signature="e#1121#1122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/activity/DetailsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+          <folding>
+            <element signature="e#3760#3792#0" expanded="true" />
+            <element signature="e#5871#5917#0" expanded="true" />
+            <element signature="e#5947#5991#0" expanded="true" />
+            <element signature="e#6081#6125#0" expanded="true" />
+            <element signature="e#6193#6247#0" expanded="true" />
+            <element signature="e#6388#6436#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/DeleteProductDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="99" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/android/cericatto/inventoryapp/view/AddProductDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34402332">
-          <caret line="105" column="13" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
-          <folding>
-            <element signature="e#4111#4152#0" expanded="true" />
-            <element signature="e#4256#4298#0" expanded="true" />
-            <element signature="e#4474#4517#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.30029154">
+          <caret line="103" column="49" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -76,14 +76,14 @@ public class TypeQuantityDialog extends Dialog {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 String quantity = editText.getText().toString();
-                updateDatabase(quantity);
+                modifyQuantity(quantity);
             }
         });
     }
 
-    private void updateDatabase(String quantity) {
+    private void modifyQuantity(String quantity) {
         // Checks if the quantity is of type Integer.
-        Boolean quantityIsInteger = true;
+        boolean quantityIsInteger = true;
         Integer newQuantity = 0;
         boolean success = false;
         try {
@@ -93,6 +93,15 @@ public class TypeQuantityDialog extends Dialog {
         }
 
         // Checks if we can update the database and activity.
+        boolean quantityPositive = (newQuantity > 0);
+        if (!quantityPositive) {
+            Toast.makeText(mActivity, R.string.activity_details__quantity_negative, Toast.LENGTH_LONG).show();
+        } else {
+            updateDatabase(quantityIsInteger, newQuantity, success);
+        }
+    }
+
+    private void updateDatabase(boolean quantityIsInteger, Integer newQuantity, boolean success) {
         if (quantityIsInteger) {
             InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
             Inventory current = DatabaseUtils.getInventory(mActivity, mInventoryId);
@@ -106,7 +115,7 @@ public class TypeQuantityDialog extends Dialog {
 
         // Update activity.
         if (quantityIsInteger && success) {
-            DetailsActivity activity = (DetailsActivity)mActivity;
+            DetailsActivity activity = (DetailsActivity) mActivity;
             activity.updateQuantity(newQuantity);
             dismiss();
         }

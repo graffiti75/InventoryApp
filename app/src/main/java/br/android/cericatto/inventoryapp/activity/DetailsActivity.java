@@ -1,6 +1,7 @@
 package br.android.cericatto.inventoryapp.activity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -187,10 +188,15 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         // Updates database.
         InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
         Inventory current = DatabaseUtils.getInventory(mActivity, mId);
+        Integer quantityAvailable = current.getQuantityAvailable();
         if (add) {
             current.setQuantityAvailable(current.getQuantityAvailable() + 1);
         } else {
-            current.setQuantityAvailable(current.getQuantityAvailable() - 1);
+            if (quantityAvailable < 1) {
+                current.setQuantityAvailable(0);
+            } else {
+                current.setQuantityAvailable(current.getQuantityAvailable() - 1);
+            }
         }
         DatabaseUtils.updateInventory(mActivity, current);
         DatabaseUtils.closeDatabase(database);
@@ -206,6 +212,11 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
     public void updateQuantity(Integer quantity) {
         mQuantityAvailableTextView.setText(quantity.toString());
+    }
+
+    public void closesActivity(Dialog dialog) {
+        dialog.dismiss();
+        finish();
     }
 
     //--------------------------------------------------

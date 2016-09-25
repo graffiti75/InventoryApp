@@ -37,6 +37,8 @@
     <string name="activity_details__email_order_more">Order more </string>
     <string name="activity_details__send_email">Send email</string>
 
+    <string name="activity_details__quantity_negative">The product quantity can not be negative.</string>
+
     <!-- Inventory Adapter -->
 
     <string name="adapter_inventory__name_label">Name:</string>

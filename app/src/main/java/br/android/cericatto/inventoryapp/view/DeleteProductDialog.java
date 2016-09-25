@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import br.android.cericatto.inventoryapp.R;
+import br.android.cericatto.inventoryapp.activity.DetailsActivity;
 import br.android.cericatto.inventoryapp.database.DatabaseUtils;
 import br.android.cericatto.inventoryapp.database.InventoryProvider;
 import br.android.cericatto.inventoryapp.utils.Globals;
@@ -86,12 +87,16 @@ public class DeleteProductDialog extends Dialog {
     }
 
     private void deleteProduct() {
+        // Deletes from database.
         InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
         boolean success = DatabaseUtils.deleteInventory(mActivity, mInventoryId);
         if (!success) {
             Toast.makeText(mActivity, R.string.database_error, Toast.LENGTH_LONG).show();
         }
         DatabaseUtils.closeDatabase(database);
-        mActivity.finish();
+
+        // Closes activity.
+        DetailsActivity activity = (DetailsActivity)mActivity;
+        activity.closesActivity(this);
     }
 }

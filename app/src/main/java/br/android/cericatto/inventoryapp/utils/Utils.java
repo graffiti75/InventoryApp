@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.net.ConnectivityManager;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -24,12 +23,6 @@ public class Utils {
     //--------------------------------------------------
     // Dialog Methods
     //--------------------------------------------------
-
-    public static Boolean hasConnection(Activity activity) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
-        Boolean hasConnection = connectivityManager.getActiveNetworkInfo() != null;
-        return hasConnection;
-    }
 
     public static void callBackgroundDialog(Activity context, Dialog inputDialog) {
         final BlackBackgroundDialog backgroundDialog = new BlackBackgroundDialog(context);
