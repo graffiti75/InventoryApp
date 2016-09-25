@@ -1,2 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="1565725b05679022d49c91dceeb800a0a9edccc9">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_20a5b2c19b16cc38a0537ee25fefaeb74b6c25a4/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.0_f26b82e6047557b41c1071cb3afe9b4abc53089e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_bde01a93ae84feb3463a7373911b5b4575ff72b1/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.0_f4126cc2172b9d69508da5e2ebd5c8bfd5df141d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.0_fdb380c84bed8ecf448204610ec2ac0f06b28103/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="2c367e45e7be30ae1454ba2a1248d1c33a111ea0">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_54ad4c5ac3f91c59a2b89aca7f4fcc52124afcd2/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.0/support-annotations-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.0_60a8b026371e1aab87ce1cd74325f50fbc76e6c5/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_613e201323f931172e9114153980be775ee832b2/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_6cd12b88d76e533bb978bb5c9e038e33adf56acd/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.0_dffdd777581dec20f3f73f57b3d8d6731d3f8e77/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_2bc443ac2e2eb2b22f717333689ca858318fc0d6/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.0_8237a8b35b53d99d5c2669fbaaff81b018d004dd/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.0_7bd6ed95e7b833d0b5a5d225bdc90f638da49d3f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.0_365ea13088d727e2f04fef7d2d61f7eaed038048/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.0_3c7f2e8a078a5e82350b0fc2cdff63c9bd473587/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.0_70744ad5571be74be5a40395f12c8db9210ddcd7/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.0_671d127a21e3d6375a782e445493eee1a696ef7c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_d730e607248d676a2e93d7b243cb0e6e8b8a8565/classes.dex" />
+    </item>
+    <item
+        jar="/Users/rodrigo/git/InventoryApp/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="/Users/rodrigo/git/InventoryApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_919578e24078f32fed7736740be9658e2888b7de/classes.dex" />
+    </item>
+
+</items>

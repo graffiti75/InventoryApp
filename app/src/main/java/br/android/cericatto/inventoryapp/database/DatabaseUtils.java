@@ -41,16 +41,12 @@ public class DatabaseUtils {
      * Deletes an Inventory.
      */
     public static Boolean deleteInventory(Context context, Integer id) {
-        Uri friends = Uri.parse(InventoryProvider.CONTENT_PROVIDER_URL);
+        Uri uri = Uri.parse(InventoryProvider.CONTENT_PROVIDER_URL);
         Boolean result = false;
+        String where = "id = " + id;
+        int rowsAffected = context.getContentResolver().delete(uri, where, null);
 
-        String where = InventoryProvider.ID + "=?";
-        String _id = String.valueOf(id);
-        String[] whereArgs = new String[] { _id };
-        int count = context.getContentResolver().delete(friends, where, whereArgs);
-
-        if (count > 0) result = true;
-
+        if (rowsAffected > 0) result = true;
         return result;
     }
 

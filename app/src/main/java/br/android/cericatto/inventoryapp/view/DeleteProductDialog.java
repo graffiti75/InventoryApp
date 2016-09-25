@@ -15,6 +15,7 @@ import br.android.cericatto.inventoryapp.R;
 import br.android.cericatto.inventoryapp.database.DatabaseUtils;
 import br.android.cericatto.inventoryapp.database.InventoryProvider;
 import br.android.cericatto.inventoryapp.utils.Globals;
+import br.android.cericatto.inventoryapp.utils.Utils;
 
 /**
  * SaleProductDialog.java.
@@ -60,20 +61,13 @@ public class DeleteProductDialog extends Dialog {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dialog_delete_product);
 
-        setFullScreen();
+        Utils.setFullScreen(this);
         setLayout();
     }
 
     //--------------------------------------------------
     // Methods
     //--------------------------------------------------
-
-    private void setFullScreen() {
-        Window window = getWindow();
-        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
-        window.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-    }
 
     private void setLayout() {
         Button yesButton = (Button)findViewById(R.id.id_dialog_delete_product__yes_button);

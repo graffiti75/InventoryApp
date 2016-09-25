@@ -128,41 +128,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private List<Inventory> populateRecyclerView() {
         boolean firstTime = Utils.getPreference(mActivity, Globals.CONTROL);
-        InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
         List<Inventory> list = checkFirstTime(firstTime);
-        DatabaseUtils.closeDatabase(database);
         ContentManager.getInstance().setInventoryList(list);
         return list;
     }
 
     private List<Inventory> checkFirstTime(boolean firstTime) {
+        // Adds Inventory' to database.
         List<Inventory> list = new ArrayList<>();
         if (firstTime) {
             Utils.setPreference(mActivity, Globals.CONTROL, false);
-            // Adds Inventory' to database.
             boolean success = addListToDatabase();
             if (!success) {
                 Toast.makeText(mActivity, R.string.database_error, Toast.LENGTH_LONG).show();
             }
-        } else {
-            // Check if it exists an Inventory into the database.
-            Inventory inventory = DatabaseUtils.getInventory(mActivity, 1);
-            if (inventory != null) {
-                list = DatabaseUtils.getInventoryList(mActivity);
-            }
         }
+
+        // Check if it exists an Inventory into the database.
+        InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
+        list = DatabaseUtils.getInventoryList(mActivity);
+        DatabaseUtils.closeDatabase(database);
+
         return list;
     }
 
     private boolean addListToDatabase() {
         List<Inventory> list = new ArrayList<>();
         boolean success = true;
+        InventoryProvider database = DatabaseUtils.openDatabase(mActivity);
         for (int i = 1; (i <= DataItems.NAME.length) && (success); i++) {
             Inventory item = new Inventory(i, DataItems.PRICE[i - 1], DataItems.QUANTITY[i - 1],
                 DataItems.URL[i - 1], DataItems.NAME[i - 1]);
             success = DatabaseUtils.insertInventory(mActivity, item);
             list.add(item);
         }
+        DatabaseUtils.closeDatabase(database);
         return success;
     }
 

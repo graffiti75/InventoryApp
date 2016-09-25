@@ -5,7 +5,11 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
+import android.view.Window;
+import android.view.WindowManager;
 
 import br.android.cericatto.inventoryapp.view.BlackBackgroundDialog;
 
@@ -36,6 +40,13 @@ public class Utils {
                 backgroundDialog.dismiss();
             }
         });
+    }
+
+    public static void setFullScreen(Dialog dialog) {
+        Window window = dialog.getWindow();
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 
     //--------------------------------------------------

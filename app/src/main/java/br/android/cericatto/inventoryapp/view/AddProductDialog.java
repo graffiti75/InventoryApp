@@ -60,20 +60,13 @@ public class AddProductDialog extends Dialog {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dialog_add_product);
 
-        setFullScreen();
+        Utils.setFullScreen(this);
         setLayout();
     }
 
     //--------------------------------------------------
     // Methods
     //--------------------------------------------------
-
-    private void setFullScreen() {
-        Window window = getWindow();
-        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
-        window.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-    }
 
     private void setLayout() {
         final EditText nameEditText = (EditText)findViewById(R.id.id_dialog_add_product__product_name_edit_text);
@@ -106,26 +99,32 @@ public class AddProductDialog extends Dialog {
         Boolean nameEmpty = Utils.isEmpty(name);
         Boolean urlEmpty = Utils.isEmpty(url);
         Boolean priceEmpty = Utils.isEmpty(price);
+        Double priceDouble = 0d;
 
         // Checks if the price is of type Double.
         Boolean priceIsDouble = true;
         try {
-            Double.parseDouble(price);
+            priceDouble = Double.parseDouble(price);
         } catch (NumberFormatException e) {
             priceIsDouble = false;
         }
 
         // Checks if we can update the database and adapter.
-        if (nameEmpty || urlEmpty || priceEmpty || !priceIsDouble) {
+        if (nameEmpty || urlEmpty || priceEmpty) {
             Toast.makeText(mActivity, R.string.dialog_add_product__empty_values, Toast.LENGTH_LONG).show();
         } else if (!priceIsDouble) {
             Toast.makeText(mActivity, R.string.dialog_add_product__price_decimal, Toast.LENGTH_LONG).show();
         } else {
-            // Updates database and adapter.
-            List<Inventory> list = updateDatabase(name, url, price);
-            MainActivity activity = (MainActivity)mActivity;
-            activity.updateAdapter(list);
-            dismiss();
+            Boolean priceNegative = (priceDouble < 0);
+            if (priceNegative) {
+                Toast.makeText(mActivity, R.string.dialog_add_product__price_negative, Toast.LENGTH_LONG).show();
+            } else {
+                // Updates database and adapter.
+                List<Inventory> list = updateDatabase(name, url, price);
+                MainActivity activity = (MainActivity) mActivity;
+                activity.updateAdapter(list);
+                dismiss();
+            }
         }
     }
 }

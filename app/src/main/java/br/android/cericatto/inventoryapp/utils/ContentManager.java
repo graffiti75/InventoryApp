@@ -30,10 +30,9 @@ public class ContentManager {
     //----------------------------------------------
 
     /**
-     * Private constructor.
+     * Public constructor.
      */
-    public ContentManager() {
-    }
+    public ContentManager() {}
 
     /**
      * @return The singleton instance of ContentManager.

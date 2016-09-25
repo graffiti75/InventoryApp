@@ -12,7 +12,8 @@
 
     <!-- Main Activity -->
 
-    <string name="activity_main__empty_list">The list of products is empty.\nPlease click into the button Add Product, below, to add products to the list.</string>
+    <string name="activity_main__empty_list">The list of products is empty.\nPlease click into the button\n\"Add Product\", below, to add\nproducts to the list.</string>
+    <string name="activity_main__add_product">Add Product</string>
 
     <!-- Details Activity -->
 
@@ -40,6 +41,7 @@
 
     <string name="adapter_inventory__name_label">Name:</string>
     <string name="adapter_inventory__quantity_label">Quantity Available:</string>
+    <string name="adapter_inventory__price">Price:</string>
 
     <!-- Sale Product Dialog -->
 
@@ -61,6 +63,7 @@
 
     <string name="dialog_add_product__empty_values">Please don\'t add empty values.</string>
     <string name="dialog_add_product__price_decimal">The price must be in decimal format.</string>
+    <string name="dialog_add_product__price_negative">The price can not be negative.</string>
 
     <!-- Type Quantity Dialog -->
 

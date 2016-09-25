@@ -32,6 +32,6 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="bottom"
-            android:text="Add Product" />
+            android:text="@string/activity_main__add_product" />
     </FrameLayout>
 </LinearLayout>

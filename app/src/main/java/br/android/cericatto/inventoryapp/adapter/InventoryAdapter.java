@@ -71,6 +71,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
         Glide.with(mActivity).load(url).into(holder.productImageView);
         holder.nameTextView.setText(productName);
         holder.quantityTextView.setText(quantityAvailable);
+        holder.priceTextView.setText(price);
 
         holder.saleProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,6 +120,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
         public ImageView productImageView;
         public TextView nameTextView;
         public TextView quantityTextView;
+        public TextView priceTextView;
         public ImageView saleProductButton;
 
         public ViewHolder(View view) {
@@ -127,6 +129,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
             productImageView = (ImageView)view.findViewById(R.id.id_adapter_inventory__image_view);
             nameTextView = (TextView)view.findViewById(R.id.id_adapter_inventory__name_text_view);
             quantityTextView = (TextView)view.findViewById(R.id.id_adapter_inventory__quantity_text_view);
+            priceTextView = (TextView)view.findViewById(R.id.id_adapter_inventory__price_text_view);
             saleProductButton = (ImageView)view.findViewById(R.id.id_adapter_inventory__sale_product_button);
         }
     }
